@@ -6,8 +6,8 @@ void main(){
   int b=int.parse(stdin.readLineSync()!);
   stdout.writeln(max_two(a, b));
 }
-int max_two([required int a,int b]){
-  if(a>b){
+int max_two(int a,[int? b]){
+  if(a>b!){
     return a;
   }
   else{
