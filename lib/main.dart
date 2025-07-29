@@ -1,12 +1,18 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'Leanding_page.dart';
 import 'Secure_screen.dart';
 import 'screens/home_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform, // required for FlutterFire CLI
+  // );
   runApp(ExpenseCalculatorApp());
+}
+
+class DefaultFirebaseOptions {
+  static var currentPlatform;
 }
 class ExpenseCalculatorApp extends StatelessWidget {
   const ExpenseCalculatorApp({super.key});
@@ -23,6 +29,7 @@ class ExpenseCalculatorApp extends StatelessWidget {
       routes: {
         "/":(context)=>FinanceIntroScreen(),
         "/login":(context)=>LoginScreen(),
+        "/home":(context)=>HomeScreen()
       },
     );
   }
